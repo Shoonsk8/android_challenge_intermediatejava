@@ -17,8 +17,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final TextView tv=findViewById(R.id.textResult);
         final Button bt=findViewById(R.id.buttonDoubleClick);
-        bt.setOnClickListener(new DoubleClickHandler(new DoubleClickListener() {
+        tv.setText("");
 
+        new DoubleClickInterface() {
+            @Override
+            public void setOnClickListener(View view) {
+                bt.setOnClickListener( new DoubleClickHandler( new DoubleClickListener() {
+                    @Override
+                    public void onSingleClick(View view) {
+                        tv.setTextColor(Color.BLACK);
+                        tv.append("single clickeed! ");
+                    }
+
+                    @Override
+                    public void onDoubleClick(View view) {
+                        tv.setTextColor(Color.RED);
+                        tv.append("double clicked! ");
+                    }
+                } ) );
+            }
+        };
+        bt.setOnClickListener( new DoubleClickHandler( new DoubleClickListener() {
             @Override
             public void onSingleClick(View view) {
                 tv.setTextColor(Color.BLACK);
@@ -27,12 +46,10 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onDoubleClick(View view) {
-
                 tv.setTextColor(Color.RED);
                 tv.append("double clicked! ");
             }
-        }));
-
+        } ) );
 
         final SymbolSliderView slv=findViewById(R.id.slvInterval);
 
@@ -62,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
 
 
 }
