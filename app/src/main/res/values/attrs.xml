@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SymbolSliderlView">
+        <attr name="iWidthCanvas" format="integer" />
+        <attr name="iHeightCanvas" format="integer" />
+        <attr name="iStartingRating" format="integer" />
+        <attr name="iSizeText" format="integer" />
+        <attr name="iMaxRating" format="integer" />
+        <attr name="iStartingPointX" format="integer" />
+        <attr name="iStartingPointY" format="integer" />
+        <attr name="iEndPointX" format="integer" />
+        <attr name="iEndPointY" format="integer" />
+        <attr name="iGapText" format="integer" />
+        <attr name="color_symbol" format="color"/>
+
+    </declare-styleable>
+</resources>
